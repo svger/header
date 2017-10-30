@@ -1,0 +1,55 @@
+@font-size-large:            .18rem;
+@header-height:              .44rem;
+@header-margin:              .15rem;
+@header-font-color:          #FFFFFF;
+@header-bg-color:            #3A3A3A;
+
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: @font-size-large;
+  color: @header-font-color;
+  height: @header-height;
+  line-height: @header-height;
+  text-align: center;
+  background: @header-bg-color;
+  z-index:999;
+
+  .left-wrapper {
+    height: 100%;
+    min-width: .5rem;
+    text-align: left;
+    position: absolute;
+    left: @header-margin;
+  }
+
+  .right-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    right:  @header-margin;
+    top: 0;
+
+    i {
+      margin-left: .1rem;
+    }
+  }
+
+  .title {
+    margin: 0 auto;
+    white-space: nowrap;
+    line-height: @header-height;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
