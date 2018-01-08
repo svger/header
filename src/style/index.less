@@ -1,53 +1,58 @@
-@font-size-large:            .18rem;
-@header-height:              .44rem;
-@header-margin:              .15rem;
-@header-font-color:          #FFFFFF;
-@header-bg-color:            #3A3A3A;
+@import '../../node_modules/cefc-ui-style/src/mixins/utils.less';
+@import '../../@{theme}';
 
-.header-wrapper {
+// @font-size-large:            .18rem;
+// @header-height:              .44rem;
+// @header-margin:              .15rem;
+// @header-font-color:          #FFFFFF;
+// @header-bg-color:            #3A3A3A;
+
+@headerPrefixCls: cefc-header;
+
+.@{headerPrefixCls} {
   position: fixed;
-  top: 0;
   width: 100%;
-  font-size: @font-size-large;
-  color: @header-font-color;
-  height: @header-height;
-  line-height: @header-height;
-  text-align: center;
-  background: @header-bg-color;
-  z-index:999;
-
-  .left-wrapper {
-    height: 100%;
-    min-width: .5rem;
-    text-align: left;
-    position: absolute;
-    left: @header-margin;
-  }
-
-  .right-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    position: absolute;
-    right:  @header-margin;
-    top: 0;
-
-    i {
-      margin-left: .1rem;
-    }
-  }
-
-  .title {
-    margin: 0 auto;
-    white-space: nowrap;
-    line-height: @header-height;
-  }
-}
-
-.iconContainer {
+  top: 0;
+  left: 0;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: darken(@fill-base, 75%);
+  color: @color-text-base-inverse;
+  
+
+  &-title, &-left, &-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &-title {
+    flex: 3;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: @font-size-heading;
+    justify-content: center;
+    padding-top: @v-spacing-sm;
+    padding-bottom: @v-spacing-sm;
+    min-height: 44 * @hd;
+  }
+
+  &-left, &-right {
+    margin-left: @h-spacing-md;
+    margin-right: @h-spacing-md;
+    font-size: @font-size-subhead;
+    flex: 1;
+  }
+
+  &-left {
+    justify-content: flex-start;
+  }
+
+  &-right {
+    justify-content: flex-end;
+  }
 }
 
 
